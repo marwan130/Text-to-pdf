@@ -1,0 +1,15 @@
+step 1: we initialize two computers as available
+step 2: we start a simulation clock at time = 0
+step 3: we generate the first task arrival time randomly using exponential distribution with average time of 3 seconds
+step 4: repeat the following steps until simulation time exceeds n seconds
+- if the clock reaches the task arrival time, generate a new task with a random service time between 1 and 5 seconds. if a computer is free we assign it that task, 
+else enqeue the task in a fifo queue, then schedule the next task arrival
+- update all the computers' remaining times
+- if a computer finishes a task and the queue is not empty, we assign the next task in the queue to that computer
+- increment the simulation clock 
+
+Data structure
+computer object with attributes available, remainingTime and id
+task object with arrivalTime and serviceTime
+a fifo queue to store waiting tasks
+a float clock to simulate time counter
